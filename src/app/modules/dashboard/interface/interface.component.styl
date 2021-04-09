@@ -1,0 +1,71 @@
+#interface
+  background-color: #f1ece9
+  display: flex
+  width: 100%
+  min-height: 100vh
+
+  nav
+    width: 250px
+    background-color: #9e8a77
+    color: #f1ece9
+    border-left: solid 5px #4c301b
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2)
+
+    h1
+      width: 170px
+      display: table
+      margin: 20px auto
+
+    #avatar
+      margin: 0 auto 30px
+      display: table
+      text-align: center
+
+      img
+        width 120px
+        border: solid 3px white
+        border-radius: 50%
+
+      #name-user
+        font-weight: bold
+        font-size: 1.2em
+
+      #name-email
+        font-size: .8em
+
+    ul>li>a
+      display: table
+      padding: 10px
+      margin-left: -5px
+      width: calc(100% + 5px)
+      border-left: transparent 5px solid
+
+      &:hover
+        background-color: #ccbba9
+      &.active
+        background-color: #ccbba9
+      &:hover, &.active
+        color: #4c301b
+        border-color: #9b4d12
+
+      &>i
+        padding-right: 5px
+        color: #4c301b
+        font-size: 1.4em
+        vertical-align: middle
+
+  &>div
+    flex: auto
+    min-height: 100vh
+
+    header
+      width: 100%
+      padding: 10px
+      background: white
+      box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2)
+      margin-bottom: 10px
+      display: flex
+      justify-content: space-between
+
+    main
+      padding: 10px

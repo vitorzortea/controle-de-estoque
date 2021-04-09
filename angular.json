@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "controleDeEstoque"
+  "defaultProject": "controleDeEstoque",
+  "cli": {
+    "analytics": false
+  }
 }
