@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import firebase from 'firebase/app';
 
 @Component({
   selector: 'app-interface',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterfaceComponent implements OnInit {
 
-  constructor() { }
+  user: Observable<firebase.User>;
+  constructor(private authServ: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.user = this.authServ.authUser();
+  }
+
+  logout() {
+    this.authServ.logout().then(() => this.router.navigate(['/auth']));
   }
 
 }
