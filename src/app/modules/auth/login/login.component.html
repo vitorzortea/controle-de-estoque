@@ -3,17 +3,17 @@
   <form>
     <label>
       <p>E-mail</p>
-      <input type="email" value="vitorzortea@gmail.com">
+      <input name="emailControle" [(ngModel)]="email" type="email" value="vitorzortea@gmail.com" required>
     </label>
     <label>
       <p>Senha</p>
-      <input type={{viewPass}} value="123456">
+      <input name="passwordControl" [(ngModel)]="senha" type={{viewPass}} value="123456" required minlength="6" maxlength="30">
       <i *ngIf="this.viewPass == 'password'" (click)="toggleView()" class="far fa-eye"></i>
       <i *ngIf="this.viewPass == 'text'" (click)="toggleView()" class="far fa-eye-slash"></i>
     </label>
-    <button>Entrar</button>
+    <button (click)="logar()">Entrar</button>
   </form>
   <a>Esqueci minha senha</a>
   <span class="hr"></span>
-  <button id="bt-conta">Criar uma conta</button>
+  <button type="button" id="bt-conta">Criar uma conta</button>
 </section>
