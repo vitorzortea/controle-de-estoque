@@ -6,15 +6,10 @@ import { InterfaceComponent } from './interface/interface.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'dashboard'
-  },
-  {
-    path: '',
     component: InterfaceComponent,
     children: [
       {
-        path: 'dashboard',
+        path: '',
         component: DashboardComponent
       },
     ]
