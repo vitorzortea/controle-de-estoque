@@ -1,0 +1,39 @@
+<section id="add-user">
+  <div class="title-page">
+    <h1 *ngIf="update"><i class="fal fa-pencil-paintbrush"></i> Editar Produto</h1>
+    <h1 *ngIf="!update"><i class="far fa-box-check"></i> Novo Produto</h1>
+  </div>
+  <div class="row">
+    <div class="col-xl-8 col-md-12">
+      <div class="box-dash box-add">
+        <form [formGroup]="formProduto">
+          <input name="create-on" formControlName="createOn" type="hidden" required>
+          <div class="row">
+            <label class="col-xl-12 col-md-12">
+              <p>Nome</p>
+              <input name="nomePControl" formControlName="nome" type="text" required>
+            </label>
+            <label class="col-xl-12 col-md-12">
+              <p>Valor Unitário</p>
+              <input name="valorControl" formControlName="valor" type="number" required>
+            </label>
+          </div>
+          <div class="row row-space">
+            <button class="delete">
+              <i class="fad fa-eraser"></i> Limpar
+            </button>
+            <button class="save" (click)="salvar()" *ngIf="update">
+              <i class="fad fa-save"></i> Atualizar
+            </button>
+            <button class="save" (click)="salvar()" *ngIf="!update">
+              <i class="fad fa-save"></i> Criar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  <div class="col-xl-4 col-md-12">
+    <img class="ilustracao-inter-page" src="/assets/img/ilus-prod.png" alt="Add User" />
+  </div>
+</div>
+</section>
