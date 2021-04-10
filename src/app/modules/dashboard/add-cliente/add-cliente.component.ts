@@ -25,6 +25,7 @@ export class AddClienteComponent implements OnInit {
     let cliente = new Clientes;
     cliente.endereco = new Endereco
     this.formCliente = this.fb.group({
+      createOn: new FormControl(this.dataFormatada),
       nome: new FormControl(cliente.nome),
       cpf:  new FormControl(cliente.cpf),
       cep:  new FormControl(cliente.endereco.cep),
@@ -38,16 +39,25 @@ export class AddClienteComponent implements OnInit {
       nacimento:  new FormControl(cliente.nascimento),
     });
   }
-  save(){
+  salvar(){
     console.log(this.formCliente.value)
     this.clientesService.createOrUpdate(this.formCliente.value).then(() => {
-      console.log(`Cliente 'salvo' com sucesso.`)
+      this.router.navigate(['/clientes'])
     })
     .catch((erro) => {
       console.log(`Erro ao salvar o Cliente.`, `Detalhes: ${erro}`)
     })
-    this.formCliente.reset()
   }
+  limpar(){ this.formCliente.reset() }
 
-
+  get dataFormatada(){
+    const pad = function(num) { return ('00'+num).slice(-2) };
+    let date = new Date();
+    return date.getUTCFullYear()+'-'+
+    pad(date.getUTCMonth() + 1)+'-'+
+    pad(date.getUTCDate())+' '+
+    pad(date.getUTCHours())+':'+
+    pad(date.getUTCMinutes())+':'+
+    pad(date.getUTCSeconds());
+  }
 }

@@ -6,6 +6,7 @@
     <div class="col-xl-8 col-md-12">
       <div class="box-dash box-add">
         <form [formGroup]="formCliente">
+          <input name="create-on" formControlName="createOn" type="hidden" required>
           <h2>Dados Pessoais</h2>
           <div class="row">
             <label class="col-xl-12 col-md-12">
@@ -64,7 +65,7 @@
             <button class="delete">
               <i class="fad fa-eraser"></i> Limpar
             </button>
-            <button class="save" (click)="save()">
+            <button class="save" (click)="salvar()">
               <i class="fad fa-save"></i> Salvar
             </button>
           </div>
