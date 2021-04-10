@@ -5,4 +5,28 @@
       <i class="fad fa-plus-hexagon"></i> Adicionar cliente
     </button>
   </div>
+  <div id="ultimos-pedidos" class="box-dash">
+    <span class="box-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Endereço</th>
+            <th>E-mail</th>
+            <th>Nascimento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes$	|	async">
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.cpf}}</td>
+            <td>{{cliente.bairro}}, {{cliente.logadouro}}, {{cliente.numero}}, {{cliente.complemento}} | {{cliente.cidade}}, {{cliente.estado}} ({{cliente.cep}})</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.nacimento}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </span>
+  </div>
 </section>
