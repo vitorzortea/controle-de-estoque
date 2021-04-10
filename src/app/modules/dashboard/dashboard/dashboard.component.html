@@ -1,1 +1,44 @@
-<p>dashboard works!</p>
+<section id="dashboard" class="row">
+  <div class="col-xl-6 col-md-12">
+    <app-box-comparativo [title]="'Clientes'"></app-box-comparativo>
+  </div>
+  <div class="col-xl-6 col-md-12">
+    <app-box-comparativo [title]="'Vendas'"></app-box-comparativo>
+  </div>
+  <div class="col-xl-8 col-md-12">
+    <div id="ultimos-pedidos" class="box-dash">
+      <h2>Pedidos recentes</h2>
+      <span class="box-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Cod. Venda</th>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Produto</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of ['','','','','','','']">
+              <td>sfdnwewbw</td>
+              <td>20/11/2020 10:20</td>
+              <td>Fulano de Tal</td>
+              <td>Nome do Produto</td>
+              <td>200,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+      <a routerLink="/">Veja todos os pedidos de vendas</a>
+    </div>
+  </div>
+  <div class="col-xl-4 col-md-12">
+    <div id="rendimentos" class="box-dash">
+      <h2>Rendimentos</h2>
+      <p><small>Mensal</small>R$.<strong>1.200,00</strong></p>
+      <p><small>Anual</small>R$.<strong>120.500,00</strong></p>
+      <p><small>Meta minima</small>R$.<strong>10.200,00</strong></p>
+    </div>
+  </div>
+</section>

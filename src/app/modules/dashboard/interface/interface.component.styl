@@ -1,10 +1,14 @@
 #interface
   background-color: #f1ece9
-  display: flex
   width: 100%
   min-height: 100vh
+  position: relative
 
   nav
+    position: absolute
+    top: 0
+    left 0
+    min-height: 100%
     width: 250px
     background-color: #9e8a77
     color: #f1ece9
@@ -40,16 +44,23 @@
       width: calc(100% + 5px)
       border-left: transparent 5px solid
 
-      &:hover
-        background-color: #ccbba9
-      &.active
-        background-color: #ccbba9
-      &:hover, &.active
-        color: #4c301b
+      &:hover:not(.active)
+        background-color: rgba(111, 73, 44, .5);
         border-color: #9b4d12
+        color: #fbf9f8
+        i
+          color: #fbf9f8
+      &.active
+        background-color: #6f492c
+        color: #fbf9f8
+        border-color: #fbf9f8
+        i
+          color: #fbf9f8
+          font-weight: bold
 
       &>i
-        padding-right: 5px
+        width: 1.5em
+        text-align: center
         color: #4c301b
         font-size: 1.4em
         vertical-align: middle
@@ -57,6 +68,12 @@
   &>div
     flex: auto
     min-height: 100vh
+    width: calc(100% - 250px)
+    margin: 0 0 0 auto
+    position relative
+    z-index 2
+    background: #f1ece9
+    transition: .5s width
 
     header
       width: 100%
@@ -69,3 +86,6 @@
 
     main
       padding: 10px
+
+  &.hide-menu>div
+    width: 100%

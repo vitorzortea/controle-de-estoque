@@ -13,13 +13,15 @@ export class InterfaceComponent implements OnInit {
 
   user: Observable<firebase.User>;
   constructor(private authServ: AuthService, private router: Router) { }
+  hideMenu = false
 
   ngOnInit() {
-    this.user = this.authServ.authUser();
+    this.user = this.authServ.authUser()
   }
 
   logout() {
-    this.authServ.logout().then(() => this.router.navigate(['/auth']));
+    this.authServ.logout().then(() => this.router.navigate(['/auth']))
   }
+  toggleMenu(){ this.hideMenu = !this.hideMenu}
 
 }

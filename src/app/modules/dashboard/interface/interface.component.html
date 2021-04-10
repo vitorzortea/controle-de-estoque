@@ -1,4 +1,4 @@
-<section id="interface">
+<section id="interface" [ngClass]="{'hide-menu': hideMenu}">
   <nav>
     <h1><img src="/assets/svg/logo-negative.svg" alt="Controle de Estoque" /></h1>
     <span id="avatar">
@@ -7,15 +7,23 @@
       <p id="name-email">vitorzortea@gmail.com</p>
     </span>
     <ul>
-      <li><a href="#"><i class="fal fa-tachometer-alt-fast"></i> Painel de Controle</a></li>
-      <li><a href="#"><i class="fal fa-users"></i> Meus Clientes</a></li>
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="fal fa-tachometer-alt-fast"></i> Painel de Controle
+        </a>
+      </li>
+      <li>
+        <a routerLink="/clientes" routerLinkActive="active">
+          <i class="fal fa-users"></i> Meus Clientes
+        </a>
+      </li>
       <li><a href="#"><i class="fal fa-box"></i> Todos os Produtos</a></li>
       <li><a href="#"><i class="fal fa-cash-register"></i> Pedidos de Vendas</a></li>
     </ul>
   </nav>
   <div>
     <header>
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-bars" (click)="toggleMenu()"></i>
       <button (click)="logout()">
         <i class="far fa-user-circle"></i>
         Sair da Conta
