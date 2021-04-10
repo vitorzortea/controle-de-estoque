@@ -32,4 +32,102 @@
       &:last-child
         padding-right 20px
 
+.title-page
+  padding: 20px
+  align-items: center
+
+  h1
+    font-size: 32px
+    i
+      font-size: 1.2em
+      vertical-align: middle
+      padding-right: 10px
+
+  button
+    border-radius: 6px
+    font-weight: bold
+    line-height: 1em
+    padding: 15px 30px
+    background-color: #ffba70
+    margin: 5px
+    color: #6b2d0f
+    display: table
+    &.add
+      background-color: #22C55E
+      color: white
+
+.ilustracao-inter-page
+  padding: 10px 50px
+
+form
+  label
+    position: relative
+
+    p
+      padding: 2px 5px
+      background-color: #fbf9f8
+      margin: 0 10px -.8em
+      position relative
+      z-index: 2
+      display: table
+      font-size: 0.9em
+
+    input, select
+      background-color: #fbf9f8
+      border: 1px solid #d4d2ca
+      font-size: 16px
+      line-height: 1em
+      padding: 12px 15px
+      border-radius: 6px
+      display: table
+      margin-bottom: 10px
+      width: 100%
+
+      &:focus, &:hover
+        border-color: #ff9800
+        box-shadow: 0 0 0 2px #e7f3ff
+        caret-color: #ff9800
+
+      &.input-error, &.input-error:focus, &.input-error:hover
+        border-left: solid 5px red
+  h2:not(:first-child)
+    margin-top: 20px
+  button
+    border-radius: 6px
+    font-weight: bold
+    line-height: 1em
+    padding: 10px 40px
+    background-color: #ffba70
+    margin: 5px
+    color: #6b2d0f
+    display: table
+    &.delete
+      background-color: #EF4544
+      color: white
+    &.save
+      background-color: #22C55E
+      color: white
+
+.box-add
+  animation box-add 1s forwards
+.ilustracao-inter-page
+  animation ilustracao 1s forwards
+
+@keyframes box-add
+  0%
+    opacity 0
+    transform translate(20px, 0)
+
+  100%
+    opacity 1
+    transform translate(0, 0)
+
+@keyframes ilustracao
+  0%
+    opacity 0
+    transform translate(-20px, 0)
+
+  100%
+    opacity 1
+    transform translate(0, 0)
 

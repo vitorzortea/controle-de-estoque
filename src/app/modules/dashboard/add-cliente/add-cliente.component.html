@@ -1,1 +1,78 @@
-<p>add-cliente works!</p>
+<section id="add-user">
+  <div class="title-page">
+    <h1><i class="fal fa-user-plus"></i> Novo Clientes</h1>
+  </div>
+  <div class="row">
+    <div class="col-xl-8 col-md-12">
+      <div class="box-dash box-add">
+        <form [formGroup]="formCliente">
+          <h2>Dados Pessoais</h2>
+          <div class="row">
+            <label class="col-xl-12 col-md-12">
+              <p>Nome</p>
+              <input name="nomeControl" formControlName="nome" type="text" required>
+            </label>
+            <label class="col-xl-3 col-md-12">
+              <p>CPF</p>
+              <input name="cpfControl" formControlName="cpf" type="text" required>
+            </label>
+            <label class="col-xl-5 col-md-12">
+              <p>E-mail</p>
+              <input name="emailControl" formControlName="email" type="email" required>
+            </label>
+            <label class="col-xl-4 col-md-12">
+              <p>nacimento</p>
+              <input name="dateControl" formControlName="nacimento" type="date" required>
+            </label>
+          </div>
+          <h2>Endereço</h2>
+          <div class="row">
+            <label class="col-xl-3 col-md-12">
+              <p>CEP</p>
+              <input name="cepControl" formControlName="cep" type="text" required>
+            </label>
+            <label class="col-xl-7 col-md-12">
+              <p>Logradouro</p>
+              <input name="logadouroControl" formControlName="logadouro" type="text" required>
+            </label>
+            <label class="col-xl-2 col-md-12">
+              <p>Número</p>
+              <input name="numeroControl" formControlName="numero" type="number" required>
+            </label>
+            <label class="col-xl-6 col-md-12">
+              <p>Bairro</p>
+              <input name="bairroControl" formControlName="bairro" type="text">
+            </label>
+            <label class="col-xl-6 col-md-12">
+              <p>Complemento</p>
+              <input name="complementoControl" formControlName="complemento" type="text">
+            </label>
+            <label class="col-xl-7 col-md-12">
+              <p>Cidade</p>
+              <input name="cidadeControl" formControlName="cidade" type="text" required>
+            </label>
+            <label class="col-xl-5 col-md-12">
+              <p>Estado</p>
+              <select name="estadoControl" formControlName="estados" required>
+                <ng-container *ngFor="let selectestado of listEstado">
+                  <option value={{selectestado}}>{{selectestado}}</option>
+                </ng-container>
+              </select>
+            </label>
+          </div>
+          <div class="row row-space">
+            <button class="delete">
+              <i class="fad fa-eraser"></i> Limpar
+            </button>
+            <button class="save" (click)="save()">
+              <i class="fad fa-save"></i> Salvar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  <div class="col-xl-4 col-md-12">
+    <img class="ilustracao-inter-page" src="/assets/img/ilus-user.png" alt="Add User" />
+  </div>
+</div>
+</section>

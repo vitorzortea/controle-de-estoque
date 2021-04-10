@@ -7,13 +7,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { BoxComparativoComponent } from 'src/app/core/components/box-comparativo/box-comparativo.component';
 import { AddClienteComponent } from './add-cliente/add-cliente.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [InterfaceComponent, DashboardComponent, ClientesComponent, BoxComparativoComponent, AddClienteComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class DashboardModule { }
