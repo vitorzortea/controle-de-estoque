@@ -15,15 +15,20 @@
             <th>Endereço</th>
             <th>E-mail</th>
             <th>Nascimento</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of clientes$	|	async">
+          <tr *ngFor="let cliente of clientes$ |	async">
             <td>{{cliente.nome}}</td>
             <td>{{cliente.cpf}}</td>
             <td>{{cliente.bairro}}, {{cliente.logadouro}}, {{cliente.numero}}, {{cliente.complemento}} | {{cliente.cidade}}, {{cliente.estado}} ({{cliente.cep}})</td>
             <td>{{cliente.email}}</td>
-            <td>{{cliente.nacimento}}</td>
+            <td>{{cliente.nacimento | date:'dd/LL/yyyy'}}</td>
+            <td>
+              <button class="invisivel" routerLink="/clientes/{{cliente.id}}" >Editar</button>
+              <button class="delete invisivel" (click)="deletar(cliente.id)">Deletar</button>
+            </td>
           </tr>
         </tbody>
       </table>

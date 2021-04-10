@@ -27,10 +27,33 @@
     td,th
       border-top 1px solid #d5c1b5
       padding 8px
+      text-align: left
+      vertical-align: middle;
       &:first-child
         padding-left 20px
       &:last-child
         padding-right 20px
+      &>button
+        display: table
+        font-size: 0.8em
+        border-radius: 6px
+        line-height: 1em
+        padding: 10px 0
+        width: 100px
+        background-color: #867968
+        margin: 2px
+        color: #fbf9f8
+        &.invisivel
+          opacity 0
+        &.delete
+          background-color: #EF4544
+          color: white
+        &.save
+          background-color: #22C55E
+          color: white
+    tr:hover td>button.invisivel
+      opacity 1
+
 
 .title-page
   padding: 20px

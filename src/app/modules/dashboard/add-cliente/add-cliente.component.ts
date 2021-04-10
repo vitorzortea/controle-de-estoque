@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Clientes } from 'src/app/models/clientes.model';
-import { Endereco } from 'src/app/models/endereco.model';
 
 @Component({
   selector: 'app-add-cliente',
@@ -11,6 +10,8 @@ import { Endereco } from 'src/app/models/endereco.model';
   styleUrls: ['./add-cliente.component.styl']
 })
 export class AddClienteComponent implements OnInit {
+  id;
+  update = false;
   formCliente: FormGroup;
   listEstado = ["Acre","Alagoas","Amapá","Amazonas","Bahia","Ceará","Distrito Federal","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"]
 
@@ -18,25 +19,35 @@ export class AddClienteComponent implements OnInit {
     public clientesService: ClientesService,
     public fb: FormBuilder,
     public router: Router,
+    public route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void { this.setForm() }
-  setForm(){
-    let cliente = new Clientes;
-    cliente.endereco = new Endereco
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get("id");
+    this.setForm(new Clientes)
+    if(this.id){
+      this.clientesService.get(this.id).subscribe((res)=>{
+        this.update = true;
+        console.log(res)
+        this.setForm(res)
+      });
+    }
+  }
+  setForm(cliente){
     this.formCliente = this.fb.group({
+      id: new FormControl(cliente.id),
       createOn: new FormControl(this.dataFormatada),
       nome: new FormControl(cliente.nome),
       cpf:  new FormControl(cliente.cpf),
-      cep:  new FormControl(cliente.endereco.cep),
-      logadouro:  new FormControl(cliente.endereco.logradouro),
-      numero:  new FormControl(cliente.endereco.numero),
-      bairro:  new FormControl(cliente.endereco.bairro),
-      complemento:  new FormControl(cliente.endereco.complemento),
-      cidade:  new FormControl(cliente.endereco.cidade),
-      estados:  new FormControl(cliente.endereco.estado),
+      cep:  new FormControl(cliente.cep),
+      logadouro:  new FormControl(cliente.logadouro),
+      numero:  new FormControl(cliente.numero),
+      bairro:  new FormControl(cliente.bairro),
+      complemento:  new FormControl(cliente.complemento),
+      cidade:  new FormControl(cliente.cidade),
+      estados:  new FormControl(cliente.estados),
       email:  new FormControl(cliente.email),
-      nacimento:  new FormControl(cliente.nascimento),
+      nacimento:  new FormControl(cliente.nacimento),
     });
   }
   salvar(){

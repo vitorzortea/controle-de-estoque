@@ -1,6 +1,7 @@
 <section id="add-user">
   <div class="title-page">
-    <h1><i class="fal fa-user-plus"></i> Novo Clientes</h1>
+    <h1 *ngIf="update"><i class="fal fa-user-plus"></i> Editar Clientes</h1>
+    <h1 *ngIf="!update"><i class="fal fa-user-plus"></i> Novo Clientes</h1>
   </div>
   <div class="row">
     <div class="col-xl-8 col-md-12">
@@ -65,8 +66,11 @@
             <button class="delete">
               <i class="fad fa-eraser"></i> Limpar
             </button>
-            <button class="save" (click)="salvar()">
-              <i class="fad fa-save"></i> Salvar
+            <button class="save" (click)="salvar()" *ngIf="update">
+              <i class="fad fa-save"></i> Atualizar
+            </button>
+            <button class="save" (click)="salvar()" *ngIf="!update">
+              <i class="fad fa-save"></i> Criar
             </button>
           </div>
         </form>

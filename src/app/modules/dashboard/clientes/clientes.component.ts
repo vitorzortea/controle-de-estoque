@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Clientes } from 'src/app/models/clientes.model';
 import { ClientesService } from 'src/app/services/clientes.service';
 
@@ -11,15 +13,19 @@ import { ClientesService } from 'src/app/services/clientes.service';
 export class ClientesComponent implements OnInit {
   clientes$:	Observable<Clientes[]>;
   constructor(
-    public clientes: ClientesService
+    public clientes: ClientesService,
+    public router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.clientes.list().subscribe(
-      (res)=>console.log(res)
-    )
-    this.clientes$	=	this.clientes.list();
-    console.log(this.clientes$);
+    this.clientes$	=	this.clientes.list().pipe(
+      map((event)=>
+        event.sort((a, b)=>
+          new Date(b.createOn).getTime() - new Date(a.createOn).getTime()
+        )
+      )
+    );
   }
+  deletar(id){ this.clientes.delete(id) }
 
 }
