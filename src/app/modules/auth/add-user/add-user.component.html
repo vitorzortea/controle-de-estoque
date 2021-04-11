@@ -12,8 +12,6 @@
     <label>
       <p>Senha</p>
       <input name="passwordControl" [(ngModel)]="senha" type="password" required minlength="6" maxlength="30">
-      <i *ngIf="this.viewPass == 'password'" (click)="toggleView()" class="far fa-eye"></i>
-      <i *ngIf="this.viewPass == 'text'" (click)="toggleView()" class="far fa-eye-slash"></i>
     </label>
     <button (click)="criar()">Cadastrar</button>
   </form>

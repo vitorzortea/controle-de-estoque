@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   email: string;
   senha: string;
-  mensagem: string;
   emailEnviado: boolean;
 
   viewPass = 'password';
@@ -25,35 +24,33 @@ export class LoginComponent implements OnInit {
   logar() {
     try {
       if (this.email == undefined || this.senha == undefined) {
-        this.mensagem = 'Todos os campos devem ser preenchido'
+        alert('Todos os campos devem ser preenchido');
         return
       }
       this.authServ.login(this.email, this.senha)
         .then(() => { this.router.navigate(['/']) })
         .catch(erro => {
-          let detalhes = '';
           switch (erro.code) {
             case 'auth/user-not-found': {
-              detalhes = 'Não existe usuário para o email informado';
+              alert('Não existe usuário para o email informado');
               break;
             }
             case 'auth/invalid-email': {
-              detalhes = 'Email inválido';
+              alert('Email inválido');
               break;
             }
             case 'auth/wrong-password': {
-              detalhes = 'Senha Inválida';
+              alert('Senha Inválida');
               break;
             }
             default: {
-              detalhes = erro.message;
+              alert('Erro: '+erro.message);
               break;
             }
           }
-          this.mensagem = `${detalhes}`;
         });
     } catch (erro) {
-      this.mensagem = `Erro ao logar. Detalhes: ${erro}`;
+      alert(`Erro ao logar. Detalhes: ${erro}`);
     }
 
   }

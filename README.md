@@ -1,27 +1,40 @@
-# ControleDeEstoque
+# WK Technology - Avaliação Técnica de Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+| Modulo de Autenticação | DashBoard Home | Listagem de Dados | Criação/Edição Dados |
+|---|---|---|---|
+|  ![](https://i.ibb.co/N13v7YS/1.jpg) |  ![](https://i.ibb.co/Jpd5PDC/2.jpg) |  ![](https://i.ibb.co/cgHyNtY/3.jpg) | |  ![](https://i.ibb.co/ygJqxkn/4.jpg) |
 
-## Development server
+Esse projeto foi desenvolvido com o Angular na versão 11.0.7.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rode o projeto com `ng serve`. No navegador vá para url `http://localhost:4200/`. A aplicação web irá atualizar automaticamente a cada atualização dos arquivos.
 
-## Code scaffolding
+## Demostração em Vídeo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[![Veja o video!](https://i.ibb.co/4NqbZDt/5.jpg)](https://www.youtube.com/watch?v=9tpeUg7LlQ0)
+··
+[https://www.youtube.com/watch?v=9tpeUg7LlQ0](www.youtube.com/watch?v=9tpeUg7LlQ0)
 
-## Build
+## Objetivos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [X] **Integração com Firebase**
+- [X] **Menu Inicial**
+- [X] **CRUD Clientes** (Nome, CPF, CEP, Logradouro, Número, Bairro, Complemento, Cidade, E-Mail e Data de Nascimento  )
+- [X] **CRUD Produtos** (ID do produto, Nome e Valor Unitário)
+- [X] **CRUD Pedido de venda** (ID da venda, Data/hora, Cliente, Produto, Total da Venda)
+- [X] **Uso de Recursos nativos do Angula** (Routing, Modules, Components, Observables, Resolvers, Guards)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Bonus
 
-## Running end-to-end tests
+- [X] **Utilização de CSS** (SCSS e TailwindCSS)
+- [X] **Utilização de Templates Treo da Pulsetheme** (ou um de sua escolha)
+- [X] **Publicação do teste em servidores web** [https://www.youtube.com/watch?v=9tpeUg7LlQ0](www.youtube.com/watch?v=9tpeUg7LlQ0)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## My Suggestions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [X] **Sistema de Autenticação**
+- [X] **Dashboard com manipulação de dados**
+- [X] **Guard Autenticação**
+- [X] **Dados do Uduário**
+

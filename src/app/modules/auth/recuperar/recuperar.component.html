@@ -1,0 +1,13 @@
+<section id="recuperar" class="section-auth">
+  <h2>Recuperar senha</h2>
+  <form>
+    <label>
+      <p>E-mail</p>
+      <input name="emailControle" [(ngModel)]="email" type="email" required>
+    </label>
+    <button (click)="recuperar()">recuperar</button>
+  </form>
+  <a routerLink="/auth">Lembrei minha senha</a>
+  <span class="hr"></span>
+  <button routerLink="/auth/add" type="button" id="bt-conta">Criar uma conta</button>
+</section>

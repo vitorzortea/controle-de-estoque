@@ -17,8 +17,13 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void { }
 
   criar(){
-    this.authServ.criarUser(this.nome, this.email, this.senha)
-    this.router.navigate(['/'])
+    if(this.nome && this.email && this.senha){
+      this.authServ.criarUser(this.nome, this.email, this.senha)
+      alert('Conta criada com sucesso!')
+      this.router.navigate(['/'])
+    }else{
+      alert('Todos os campos devem ser preenchidos')
+    }
   }
 
 }
