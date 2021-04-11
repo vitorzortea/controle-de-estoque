@@ -1,0 +1,51 @@
+<section id="add-pedido">
+  <div class="title-page">
+    <h1 *ngIf="update"><i class="fal fa-pencil-paintbrush"></i> Editar Pedido de Venda</h1>
+    <h1 *ngIf="!update"><i class="far fa-box-check"></i> Novo Pedido de venda</h1>
+  </div>
+  <div class="row">
+    <div class="col-xl-8 col-md-12">
+      <div class="box-dash box-add">
+        <form [formGroup]="formPedidos">
+          <input name="create-on" formControlName="data" type="hidden" required>
+          <h2>Cliente</h2>
+          <div class="row">
+            <label class="col-xl-12 col-md-12">
+              <p>Nome</p>
+              <select name="nomeControl" formControlName="cliente" required>
+                <ng-container *ngFor="let cliente of clientes$ |	async">
+                  <option value={{cliente.nome}}>{{cliente.nome}}</option>
+                </ng-container>
+              </select>
+            </label>
+          </div>
+          <h2>Produtos</h2>
+          <div class="row">
+            <ng-container *ngFor="let produto of produtos$ |	async; let i=index">
+            <label class="col-xl-4 col-md-6 col-sm-12 checkbox-label">
+              <input name="produtoControl" [value]="produto.nome+'_n_'+produto.valor" (change)="changeValores()" type="checkbox">
+              <p>{{produto.nome}} <span>({{produto.valor | currency:'R$: ':'symbol'}})</span></p>
+            </label>
+            </ng-container>
+          </div>
+          <h2>Valor Total</h2>
+          <p>{{valorTotal | currency:'R$: ':'symbol'}}</p>
+          <div class="row row-space">
+            <button class="delete">
+              <i class="fad fa-eraser"></i> Limpar
+            </button>
+            <button class="save" (click)="salvar()" *ngIf="update">
+              <i class="fad fa-save"></i> Atualizar
+            </button>
+            <button class="save" (click)="salvar()" *ngIf="!update">
+              <i class="fad fa-save"></i> Criar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  <div class="col-xl-4 col-md-12">
+    <img class="ilustracao-inter-page" src="/assets/img/ilus-pedido.png" alt="Pedidos de Venda" />
+  </div>
+</div>
+</section>

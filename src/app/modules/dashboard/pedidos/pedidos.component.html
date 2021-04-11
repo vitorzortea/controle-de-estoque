@@ -1,0 +1,37 @@
+<section id="user-page">
+  <div class="title-page row row-space">
+    <h1><i class="fal fa-boxes"></i> Pedidos de Vendas</h1>
+    <button class="add" routerLink="/pedidos/add">
+      <i class="fad fa-plus-hexagon"></i> Adicionar Pedidos
+    </button>
+  </div>
+  <div id="ultimos-pedidos" class="box-dash">
+    <span class="box-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Cod. Pedido</th>
+            <th>Cliente</th>
+            <th>Produtos</th>
+            <th>Data/Hora</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidos$ |	async">
+            <td>{{pedido.id}}</td>
+            <td>{{pedido.cliente}}</td>
+            <td>
+              <ng-container *ngFor="let produto of pedido.produto"><span>{{produto}}</span></ng-container>
+            </td>
+            <td>{{pedido.valor | currency:'R$: ':'symbol'}}</td>
+            <td>
+              <button class="invisivel" routerLink="/pedidos/{{pedido.id}}" >Editar</button>
+              <button class="delete invisivel" (click)="deletar(pedido.id)">Deletar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </span>
+  </div>
+</section>

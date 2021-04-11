@@ -10,10 +10,12 @@ import { AddClienteComponent } from './add-cliente/add-cliente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProdutoComponent } from './add-produto/add-produto.component';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { AddPedidoComponent } from './add-pedido/add-pedido.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 @NgModule({
-  declarations: [InterfaceComponent, DashboardComponent, ClientesComponent, BoxComparativoComponent, AddClienteComponent, AddProdutoComponent, ProdutosComponent],
+  declarations: [InterfaceComponent, DashboardComponent, ClientesComponent, BoxComparativoComponent, AddClienteComponent, AddProdutoComponent, ProdutosComponent, AddPedidoComponent, PedidosComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

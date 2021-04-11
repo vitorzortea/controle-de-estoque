@@ -1,6 +1,6 @@
 <section id="user-page">
   <div class="title-page row row-space">
-    <h1><i class="fal fa-boxes"></i> Produtoss</h1>
+    <h1><i class="fal fa-boxes"></i> Produtos</h1>
     <button class="add" routerLink="/produtos/add">
       <i class="fad fa-plus-hexagon"></i> Adicionar Produtos
     </button>
@@ -20,7 +20,7 @@
           <tr *ngFor="let produtos of produtos$ |	async">
             <td>{{produtos.id}}</td>
             <td>{{produtos.nome}}</td>
-            <td>{{produtos.valor | currency:'R$: ':'symbol':'2.2-2'}}</td>
+            <td>{{produtos.valor | currency:'R$: ':'symbol'}}</td>
             <td>
               <button class="invisivel" routerLink="/produtos/{{produtos.id}}" >Editar</button>
               <button class="delete invisivel" (click)="deletar(produtos.id)">Deletar</button>

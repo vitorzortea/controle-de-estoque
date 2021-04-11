@@ -83,7 +83,14 @@
   padding: 10px 50px
 
 form
-  label
+  label.checkbox-label
+    input, p
+      display: inline-table
+      vertical-align: middle
+      margin-right: 10px
+      &>span
+        font-size: 0.8em
+  label:not(.checkbox-label)
     position: relative
 
     p
