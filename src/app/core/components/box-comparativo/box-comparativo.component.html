@@ -1,10 +1,22 @@
 
-<div class="box-dash box-positive box-comparative">
-    <h2>{{title}}</h2>
-    <p>analise mensal positiva</p>
-    <div class="row">
-      <span><span>10</span>Esse Mês</span>
-      <span><span>20</span>Ultimo Ano</span>
-      <span><span>+100%</span>Média mensal</span>
-    </div>
+<ng-container *ngIf="isComparado()">
+  <div [ngClass]="positivo ? 'box-dash box-positive box-comparative' : 'box-dash box-negative box-comparative'">
+      <h2>{{title}}</h2>
+      <p *ngIf="this.positivo">analise mensal <strong>positiva</strong></p>
+      <p *ngIf="!this.positivo">analise mensal <strong>negativa</strong></p>
+      <div class="row">
+        <span><span>{{comparadoMes}}</span>Esse Mês</span>
+        <span><span>{{comparado.length}}</span>Total</span>
+        <span>
+          <ng-container *ngIf="this.positivo">
+            <span class="color-green">{{comparacao}}%</span>
+            Subiu
+          </ng-container>
+          <ng-container *ngIf="!this.positivo">
+            <span class="color-red">{{comparacao}}% <i class="fas fa-arrow-alt-down"></i></span>
+            Caiu
+          </ng-container>
+        </span>
+      </div>
   </div>
+</ng-container>

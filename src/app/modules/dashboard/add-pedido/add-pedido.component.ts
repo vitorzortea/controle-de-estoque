@@ -55,7 +55,7 @@ export class AddPedidoComponent implements OnInit {
   setForm(pedidos, isEdit){
     this.formPedidos = this.fb.group({
       id: new FormControl(pedidos.id),
-      data: new FormControl(this.dataFormatada),
+      createOn: new FormControl(this.dataFormatada),
       cliente: new FormControl(pedidos.cliente),
       produto: new FormControl(pedidos.produto),
       valor: new FormControl(pedidos.valor),

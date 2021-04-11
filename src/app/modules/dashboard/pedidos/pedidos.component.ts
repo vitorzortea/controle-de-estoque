@@ -21,7 +21,7 @@ export class PedidosComponent implements OnInit {
     this.pedidos$	=	this.pedidos.list().pipe(
       map((event)=>
         event.sort((a, b)=>
-          new Date(b.data).getTime() - new Date(a.data).getTime()
+          new Date(b.createOn).getTime() - new Date(a.createOn).getTime()
         )
       )
     );

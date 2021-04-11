@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of clientes$ |	async">
+          <tr *ngFor="let cliente of clientes$ | async">
             <td>{{cliente.nome}}</td>
             <td>{{cliente.cpf}}</td>
             <td>{{cliente.bairro}}, {{cliente.logadouro}}, {{cliente.numero}}, {{cliente.complemento}} | {{cliente.cidade}}, {{cliente.estado}} ({{cliente.cep}})</td>

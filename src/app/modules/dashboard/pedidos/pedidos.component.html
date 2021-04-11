@@ -25,8 +25,8 @@
             <td>
               <ng-container *ngFor="let produto of pedido.produto"><span>{{produto}}</span></ng-container>
             </td>
-            <td>{{pedido.data | date:'dd/LL/yyyy, HH:mm'}}</td>
             <td>{{pedido.valor | currency:'R$: ':'symbol'}}</td>
+            <td>{{pedido.createOn | date:'dd/LL/yyyy, HH:mm'}}</td>
             <td>
               <button class="invisivel" routerLink="/pedidos/{{pedido.id}}" >Editar</button>
               <button class="delete invisivel" (click)="deletar(pedido.id)">Deletar</button>
