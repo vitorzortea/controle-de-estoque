@@ -10,9 +10,9 @@ Rode o projeto com `ng serve`. No navegador vá para url `http://localhost:4200/
 
 ## Demostração em Vídeo
 
-[![Veja o video!](https://i.ibb.co/4NqbZDt/5.jpg)](https://www.youtube.com/watch?v=9tpeUg7LlQ0)
+[![Veja o video!](https://i.ibb.co/4NqbZDt/5.jpg)](https://www.youtube.com/watch?v=_1rQqqksXHE)
 ··
-[https://www.youtube.com/watch?v=9tpeUg7LlQ0](www.youtube.com/watch?v=9tpeUg7LlQ0)
+[https://www.youtube.com/watch?v=_1rQqqksXHE](www.youtube.com/watch?v=_1rQqqksXHE)
 
 ## Objetivos
 
