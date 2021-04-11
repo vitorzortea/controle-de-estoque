@@ -2,7 +2,7 @@
 
 | Modulo de Autenticação | DashBoard Home | Listagem de Dados | Criação/Edição Dados |
 |---|---|---|---|
-|  ![](https://i.ibb.co/N13v7YS/1.jpg) |  ![](https://i.ibb.co/Jpd5PDC/2.jpg) |  ![](https://i.ibb.co/cgHyNtY/3.jpg) | |  ![](https://i.ibb.co/ygJqxkn/4.jpg) |
+|  ![](https://i.ibb.co/N13v7YS/1.jpg) |  ![](https://i.ibb.co/Jpd5PDC/2.jpg) |  ![](https://i.ibb.co/cgHyNtY/3.jpg) |  ![](https://i.ibb.co/ygJqxkn/4.jpg) |
 
 Esse projeto foi desenvolvido com o Angular na versão 11.0.7.
 
