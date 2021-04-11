@@ -16,7 +16,16 @@ export class AuthService {
   authUser(): Observable<firebase.User> {
     return this.user;
   }
-
+  criarUser(name: string, email: string, senha: string){
+    this.afAuth.createUserWithEmailAndPassword(email, senha).then(
+      ()=>{ this.afAuth.currentUser.then(
+          (user)=>user.updateProfile({
+            displayName: name,
+            photoURL: "https://i.ibb.co/k4jQdk2/avatar-1.jpg"
+          })
+      )}
+    );
+  }
   login(email: string, senha: string): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithEmailAndPassword(email, senha);
   }

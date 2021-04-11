@@ -17,6 +17,7 @@ export class InterfaceComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authServ.authUser()
+    this.user.subscribe((res)=>console.log(res))
   }
 
   logout() {

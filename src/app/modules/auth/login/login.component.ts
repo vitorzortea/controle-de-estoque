@@ -55,7 +55,6 @@ export class LoginComponent implements OnInit {
     } catch (erro) {
       this.mensagem = `Erro ao logar. Detalhes: ${erro}`;
     }
-    console.log('login: '+this.mensagem)
 
   }
 

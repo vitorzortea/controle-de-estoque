@@ -2,8 +2,8 @@
   <nav>
     <h1><img src="/assets/svg/logo-negative.svg" alt="Controle de Estoque" /></h1>
     <span id="avatar">
-      <img src="/assets/img/avatar.jpg" alt="Avatar" />
-      <p id="name-user">{{(user|async)?.name}}</p>
+      <img src={{(user|async)?.photoURL}} alt="Avatar" />
+      <p id="name-user">{{(user|async)?.displayName}}</p>
       <p id="name-email">{{(user|async)?.email}}</p>
     </span>
     <ul>
@@ -25,7 +25,7 @@
     <header>
       <i class="fas fa-bars" (click)="toggleMenu()"></i>
       <button (click)="logout()">
-        <i class="far fa-user-circle"></i>
+        <i class="fas fa-sign-out-alt"></i>
         Sair da Conta
       </button>
     </header>
